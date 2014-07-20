@@ -1,0 +1,134 @@
+{
+	/* This property can be used to set specific properties for particular types of pages.  
+	   Currently only search and tag pages are used
+	 */
+	"request":{
+		"search":{
+			"SearchQuery":"Entered search terms",
+			/* Used to limit the number of posts that get displayed on the search page */
+			"SearchResultCount":1
+		},
+		"tag":{
+			"Tag":"buildings",
+			/* Used to limit the number of posts that get displayed on the tag page */
+			"results":1
+		}
+	},
+
+	/* Used to mimic user-facing theme settings.
+	   Keys should be identical to what is used in the theme: ie: {block:ifShowTitle} matches to "ShowTitle"
+	 */
+	"if":{
+		"ShowTitle":true
+	},
+
+	/* All of these are required */
+	"blog":{
+		"AskEnabled":true,
+		"SubmissionsEnabled":false,
+		"values":{
+			"Name":"blog-name",
+			"Title":"Blog name",
+			"Description":"Blog description",
+			"Favicon":"#",
+			"PortraitURL-16":"http://assets.tumblr.com/images/default_avatar/cone_closed_16.png",
+			"PortraitURL-24":"http://assets.tumblr.com/images/default_avatar/cone_closed_24.png",
+			"PortraitURL-30":"http://assets.tumblr.com/images/default_avatar/cone_closed_30.png",
+			"PortraitURL-40":"http://assets.tumblr.com/images/default_avatar/cone_closed_40.png",
+			"PortraitURL-48":"http://assets.tumblr.com/images/default_avatar/cone_closed_48.png",
+			"PortraitURL-64":"http://assets.tumblr.com/images/default_avatar/cone_closed_64.png",
+			"PortraitURL-96":"http://assets.tumblr.com/images/default_avatar/cone_closed_96.png",
+			"PortraitURL-128":"http://assets.tumblr.com/images/default_avatar/cone_closed_128.png",
+			"RSS":"rss.com",
+			"HeaderImage":"",
+			/* Can be "circle" or "square" */
+			"AvatarShape":"square",
+			"SubmitLabel":"Submit",
+			"AskLabel":"Ask"
+		}
+	},
+
+	/* The "following" element must be set, but doesn't have to be enabled */
+	"following":{
+		"enabled":false
+	},
+
+	/* The "likes" element must be set, but likes are currently not implemented */
+	"likes":{
+		"enabled":false
+	},
+
+	/* The *Day* settings are only used when viewing a Day page */
+	"pagination":{
+		"enabled":false,
+		"PreviousPage":true,
+		"PreviousDayPage":true,
+		"NextPage":true,
+		"NextDayPage":true,
+		"CurrentPage":1,
+		"TotalPages":12
+	},
+
+	/*
+	 * PostType must match what the {PostType} token can be: answer, audio, chat, link, panorama, photo, photoset, text, video
+	 */
+
+	"posts":[
+		{
+			"PostType":"audio",
+			"PostID":10,
+			/* If set to true, a SoundCloud player gets embedded.  
+			   If set to false, the same player gets embedded, but gets wrapped in a div with the appropriate CSS classes added to it
+			 */
+			"AudioEmbed":true
+		},
+		{
+			"PostType":"photo",
+			"PostID": 0,
+			"PhotoURL-HighRes":"http://placehold.it/1000x1500/",
+			"PhotoURL-500":"http://placehold.it/500x750/",
+			"PhotoAlt": "Photo descriptive text",
+			"PhotoWidth-500":500,
+			"PhotoHeight-500":750,
+			"ReblogRootURL":"http://blah-root.com",
+			"ReblogRootTitle":"Reblog root title",
+			"ReblogParentURL":"http://blah-parent.com",
+			"ReblogParentTitle":"Reblog parent title",
+			"SourceURL":"http://blah-source.com",
+			"SourceTitle":"Source title",
+			"NoteCount": 20,
+			"NoteCountWithLabel":"20 notes",
+			"tags":[
+				"placeholder",
+				"AAA"
+			]
+		},
+		{
+			"PostType":"video",
+			"PostID":1,
+			/* Can be "youtube" or "tumblr".  In both cases a YouTube player gets used, but if "tumblr", the player gets wrapped in a div
+			 * with the appropriate CSS classes added to it.
+			 */
+			"videoType":"youtube",
+			"Caption": "Test caption"
+		},
+		{
+			"PostType":"photoset",
+			"PostID":2,
+			"PhotoCount":6,
+			"PhotoSetLayout":123,
+			"JSPhotoSetLayout":"[1,2,3]",
+			/* "photos" only needs to be set if you're outputing the photos yourself.
+			   If you use the {Photoset} tags, then a default Photoset gets generated
+			 */
+			"photos":{
+				"PhotoURL-HighRes":"http://placehold.it/1000x1500/",
+				"PhotoURL-500":"http://placehold.it/500x750/",
+				"PhotoAlt": "Photo descriptive text",
+				"PhotoWidth-500":500,
+				"PhotoHeight-500":750,
+				"Caption":null
+			}
+		}
+	]
+}
