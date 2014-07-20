@@ -10,7 +10,8 @@ There are a lot of rough edges that don't bother me, but might bother you.  Just
 1. Download all the files
 2. *data.json* contains all the mock data for your blog. Tweak/change it to accommodate the type of blog data you want to simulate
 3. *template.html* contains your Tumblr theme.  You should be able to do a straight transfer between Tumblr and this file (and vice versa) without any changes.
-4. Profit!
+4. Run index.php.  It'll output an error the first time, but just click one of the links it shows to continue.
+5. Profit!
 
 ##Caveats
 There are a lot of them:  
